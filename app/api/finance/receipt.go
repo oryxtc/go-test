@@ -18,11 +18,11 @@ type Receipt struct{}
 func (rec *Receipt) GetMergeList(r *ghttp.Request) {
 	//校验请求数据
 	type rValid struct {
-		SettleId string `p:"settle_id" v:"required"`
-		FinCode  string `p:"fin_code" v:"required"`
-		Vid      string `p:"vid"`
-		Pn       int    `p:"pn"`
-		Rn       int    `p:"rn"`
+		SettleId string `c:"SettleId,omitempty"`
+		FinCode  string `c:"FinCode,omitempty"`
+		Vid      string `c:"Vid,omitempty"`
+		Pn       int
+		Rn       int
 	}
 	var req *rValid
 	if err := r.Parse(&req); err != nil {
