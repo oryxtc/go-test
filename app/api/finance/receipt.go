@@ -1,7 +1,7 @@
-package receipt
+package finance
 
 import (
-	base "gf-app/app/api"
+	"gf-app/app/api"
 	"gf-app/app/service/receipt"
 
 	"github.com/gogf/gf-demos/library/response"
@@ -33,5 +33,5 @@ func (rec *Receipt) GetMergeList(r *ghttp.Request) {
 	if error := gerror.Cause(error); error != nil {
 		response.JsonExit(r, 0, error.Error())
 	}
-	response.JsonExit(r, 0, "", base.ResponseListTem{List: data, Total: total})
+	response.JsonExit(r, 0, "", api.ResponseListTem{List: data, Total: total})
 }

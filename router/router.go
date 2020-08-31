@@ -1,7 +1,7 @@
 package router
 
 import (
-	receipt "gf-app/app/api/finance"
+	"gf-app/app/api/finance"
 	"gf-app/app/service/hook"
 
 	"github.com/gogf/gf/frame/g"
@@ -15,7 +15,7 @@ func init() {
 		group.Hook("/*", ghttp.HOOK_BEFORE_SERVE, hook.Vendor)
 		//分组匹配路由
 		s.Group("/finance", func(group *ghttp.RouterGroup) {
-			group.ALL("/{.struct}/{.method}", new(receipt.Receipt))
+			group.ALL("/{.struct}/{.method}", new(finance.Receipt))
 		})
 	})
 
