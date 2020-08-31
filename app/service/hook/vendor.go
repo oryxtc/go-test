@@ -1,4 +1,4 @@
-package Hook
+package hook
 
 import (
 	"github.com/gogf/gf-demos/library/response"
