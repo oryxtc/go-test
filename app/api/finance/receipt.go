@@ -2,7 +2,7 @@ package receipt
 
 import (
 	base "gf-app/app/api"
-	receipt "gf-app/app/service"
+	"gf-app/app/service/receipt"
 
 	"github.com/gogf/gf-demos/library/response"
 	"github.com/gogf/gf/errors/gerror"

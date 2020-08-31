@@ -9,6 +9,5 @@ import (
 
 func main() {
 	s := g.Server()
-	s.BindMiddleware("router")
 	s.Run()
 }

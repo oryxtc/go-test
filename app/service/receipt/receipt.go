@@ -1,7 +1,7 @@
 package receipt
 
 import (
-	receipt "gf-app/app/model"
+	"gf-app/app/model/receipt"
 
 	"github.com/gogf/gf/frame/g"
 )
