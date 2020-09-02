@@ -16,6 +16,7 @@ func init() {
 		//分组匹配路由
 		s.Group("/finance", func(group *ghttp.RouterGroup) {
 			group.ALL("/{.struct}/{.method}", new(finance.Receipt))
+			group.ALL("/{.struct}/{.method}", new(finance.Pay))
 		})
 	})
 
