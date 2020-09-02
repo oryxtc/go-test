@@ -1,7 +1,7 @@
 package receipt
 
 import (
-	. "gf-app/app/model/pay/pay_head"
+	. "gf-app/app/model/pay_head"
 
 	"github.com/gogf/gf/errors/gerror"
 	"github.com/gogf/gf/frame/g"
