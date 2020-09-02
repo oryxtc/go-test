@@ -1,8 +1,10 @@
 package finance
 
 import (
-	"gf-app/app/service/receipt"
+	"gf-app/app/service/pay"
 	"gf-app/library/response"
+
+	"github.com/gogf/gf/util/gvalid"
 
 	"github.com/gogf/gf/errors/gerror"
 
@@ -12,19 +14,14 @@ import (
 type Pay struct{}
 
 func (p *Pay) GetPayDetail(r *ghttp.Request) {
-	//校验数据
-	type v struct {
-		PayId string
-	}
-	var req *v
-	if err := r.Parse(&req); err != nil {
-		response.JsonExit(r, 1, err.Error())
+	payId := r.GetString("pay_id")
+	if e := gvalid.Check(payId, "required", nil); e != nil {
+		response.JsonExit(r, 1, e.String())
 	}
 	//获取详情
-	data, error := receipt.GetDetail(req.PayId)
+	data, error := pay.GetDetail(payId)
 	if err := gerror.Cause(error); err != nil {
 		response.JsonExit(r, 0, err.Error())
 	}
 	response.JsonExit(r, 0, "", data)
-
 }

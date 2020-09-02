@@ -25,7 +25,7 @@ func (rec *Receipt) GetMergeList(r *ghttp.Request) {
 	//获取收货退货数据
 	data, total, error := receipt.GetReceiptAndReturnData(req.GetReceiptAndReturnInput)
 	if err := gerror.Cause(error); err != nil {
-		response.JsonExit(r, 0, error.Error())
+		response.JsonExit(r, 0, err.Error())
 	}
 	response.JsonExit(r, 0, "", response.ListData{List: data, Total: total})
 }
