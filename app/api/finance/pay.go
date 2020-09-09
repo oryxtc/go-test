@@ -11,6 +11,9 @@ import (
 	"github.com/gogf/gf/net/ghttp"
 )
 
+/**
+支付单
+*/
 type Pay struct{}
 
 func (p *Pay) GetPayDetail(r *ghttp.Request) {

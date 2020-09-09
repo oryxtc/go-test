@@ -2,7 +2,7 @@ package receipt
 
 import (
 	"gf-app/app/model"
-	"gf-app/app/model/receipt"
+	"gf-app/app/model/receipt_head"
 	"strings"
 
 	"github.com/gogf/gf/util/gconv"
@@ -47,6 +47,6 @@ func GetReceiptAndReturnData(p GetReceiptAndReturnInput) (g.Array, int, error) {
 		whereSql += " OFFSET ?"
 		binds = append(binds, gconv.Int(pn))
 	}
-	data, total, error := receipt.GetReceiptAndReturnData(whereSql, binds)
+	data, total, error := receipt_head.GetReceiptAndReturnData(whereSql, binds)
 	return g.Array{data}, total, error
 }

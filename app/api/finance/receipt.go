@@ -8,6 +8,9 @@ import (
 	"github.com/gogf/gf/net/ghttp"
 )
 
+/**
+收货单
+*/
 type Receipt struct{}
 
 type GetReceiptAndReturnRequest struct {
